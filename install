@@ -34,3 +34,9 @@ ln -s $DOTFILES/dunst $HOME/.config/dunst
 rm -rf $HOME/.config/rofi
 ln -s $DOTFILES/rofi $HOME/.config/rofi
 
+mkdir -p $HOME/.local/share/fonts
+cp $DOTFILES/fonts/nonicons.ttf $HOME/.local/share/fonts
+
+echo "==============="
+echo "==== DONE ====="
+echo "==============="

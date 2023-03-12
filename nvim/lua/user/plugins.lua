@@ -355,6 +355,15 @@ use({
   }
 })
 
+use {
+  'yamatsum/nvim-nonicons',
+  config = function()
+    require('nvim-nonicons').setup()
+  end,
+  requires = { 'kyazdani42/nvim-web-devicons' }
+}
+
+
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
