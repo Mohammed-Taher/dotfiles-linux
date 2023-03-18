@@ -130,9 +130,21 @@ use({
 
 -- One Dark Theme
 use({
-  'jessarcher/onedark.nvim',
+  -- 'jessarcher/onedark.nvim',
+  'catppuccin/nvim',
+  as = 'catppuccin',
   config = function()
-    vim.cmd('colorscheme onedark')
+    require('catppuccin').setup({
+      flavour = "mocha",
+      integrations = {
+        notify = true,
+        dashboard = true,
+        treesitter = true,
+        telescope = true,
+        illuminate = true,
+      }
+    })
+    vim.cmd('colorscheme catppuccin')
 
     vim.api.nvim_set_hl(0, 'FloatBorder', {
       fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
@@ -190,7 +202,7 @@ use({
 use({
   'akinsho/bufferline.nvim',
   requires = 'kyazdani42/nvim-web-devicons',
-  after = 'onedark.nvim',
+  after = 'catppuccin',
   config = function()
     require('user/plugins/bufferline')
   end,
@@ -211,7 +223,7 @@ use({
   config = function()
     require('user/plugins/dashboard-nvim')
   end,
-  requires = 'kyazdani42/nvim-web-devicons',
+  requires = { 'nvim-tree/nvim-web-devicons' }
 })
 
 -- Git integration.
