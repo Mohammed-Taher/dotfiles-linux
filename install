@@ -37,8 +37,8 @@ ln -s $DOTFILES/rofi $HOME/.config/rofi
 mkdir -p $HOME/.local/share/fonts
 cp $DOTFILES/fonts/nonicons.ttf $HOME/.local/share/fonts
 
-mkdir -p $HOME/scripts
-cp $DOTFILES/scripts $HOME/scripts
+rm -rf $HOME/scripts
+cp -r $DOTFILES/scripts $HOME/scripts
 
 
 echo "==============="

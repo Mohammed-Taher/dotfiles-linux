@@ -16,4 +16,4 @@ XOFF=0
 FIELDS=SSID,SECURITY,BARS
 
 #font
-FONT="CaskaydiaCove Nerd Font 8"
+FONT="CaskaydiaCove Nerd Font 12"
