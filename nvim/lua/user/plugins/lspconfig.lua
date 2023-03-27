@@ -44,11 +44,18 @@ require('lspconfig').lua_ls.setup({
   on_attach = require('lsp-format').on_attach
 })
 
+--vala
+require('lspconfig').vala_ls.setup({
+  capabilities = capabilities,
+  on_attach = require('lsp-format').on_attach
+})
+
 --python
 require('lspconfig').pyright.setup({
   capabilities = capabilities,
   on_attach = require('lsp-format').on_attach
 })
+
 
 -- null-ls
 require('null-ls').setup({
