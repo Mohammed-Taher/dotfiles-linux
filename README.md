@@ -1,1 +1,1 @@
-# My dotfiles on Arch Linux
+# My dotfiles on Linux
