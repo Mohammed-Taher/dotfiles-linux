@@ -19,16 +19,16 @@ require('telescope').setup({
     },
     sorting_strategy = 'ascending',
     mappings = {
-          ["i"] = {
-            ['<esc>'] = actions.close,
-            ['<C-Down>'] = actions.cycle_history_next,
-            ['<C-Up>'] = actions.cycle_history_prev,
+      ["i"] = {
+        ['<esc>'] = actions.close,
+        ['<C-Down>'] = actions.cycle_history_next,
+        ['<C-Up>'] = actions.cycle_history_prev,
         -- ['<C-r>'] = fb_actions.rename,
         -- ['<C-c>'] = fb_actions.copy,
         -- ['<C-m>'] = fb_actions.move,
         -- ['<del>'] = fb_actions.remove,
       },
-          ["n"] = {
+      ["n"] = {
         -- unmap toggling `fb_actions.toggle_browser`
         f = false,
       },
@@ -37,6 +37,7 @@ require('telescope').setup({
   },
   pickers = {
     find_files = {
+      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
       hidden = true,
     },
     buffers = {
@@ -69,7 +70,7 @@ require('telescope').setup({
         end
         vim.fn.jobstart(
           {
-            'catimg', filepath   -- Terminal image viewer command
+            'catimg', filepath -- Terminal image viewer command
           },
           { on_stdout = send_output, stdout_buffered = true, pty = true })
       else
@@ -86,7 +87,7 @@ require('telescope').load_extension('file_browser')
 
 vim.keymap.set('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<CR>]])
 vim.keymap.set('n', '<leader>F',
-[[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]])
+  [[<cmd>lua require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' })<CR>]])
 vim.keymap.set('n', '<leader>B', [[<cmd>Telescope file_browser<CR>]])
 vim.keymap.set('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<CR>]])
 vim.keymap.set('n', '<leader>g', [[<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>]])

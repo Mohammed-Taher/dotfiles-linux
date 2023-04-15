@@ -7,6 +7,7 @@ require('indent_blankline').setup({
     'lspinfo',
     'TelescopePrompt',
     'TelescopeResults',
+    'mason'
   },
   buftype_exclude = {
     'terminal',

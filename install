@@ -28,6 +28,9 @@ ln -s $DOTFILES/picom $HOME/.config/picom
 rm -rf $HOME/.config/polybar
 ln -s $DOTFILES/polybar $HOME/.config/polybar
 
+rm -rf $HOME/.config/polybar-weather
+ln -s $DOTFILES/polybar-weather $HOME/.config/polybar-weather
+
 rm -rf $HOME/.config/dunst
 ln -s $DOTFILES/dunst $HOME/.config/dunst
 
